@@ -32,7 +32,7 @@ Used the following libraries/services :
 + [Isotope](https://isotope.metafizzy.co/) (filtering and searching features)
 + [activate-power-mode](http://0xabcdef.com/activate-power-mode/) (typing effect used in search box)
 + [Cbox](http://www.cbox.ws/) (live chat comment box widget)
-+ [LikeBtn](http://likebtn.com/)(like button widget)
++ [LikeBtn](http://likebtn.com/) (like button widget)
 + Google spreadsheet (data storage)
 
 
@@ -51,15 +51,17 @@ These two files are compulsory to make edits:
 + data.js
 + index.html
 
-Here is a [Google spreedsheet template](https://docs.google.com/spreadsheets/d/1WElB2aS-R9EYkt5lGlSHj_GlMioOhuuvOTWZwVj6gs8/) for your ease of use.
+Here is a [Google spreedsheet template](https://bit.ly/mybookmark-spreadsheet-template) for your ease of use.
 
 1. Make a copy of the template to your Google Drive (`File` > `Make a Copy`).
 
-2. Copy your spreadsheet id to the `sheetid` variable in `data.js`.
+2. Publish your spreadsheet to the web (`File` > `Publish to the web`).
+
+3. Copy your spreadsheet id to the `sheetid` variable in `data.js`.
 ![How to use Google spreadsheet template](preview/template.png)
 
 
-3. Now, you would see the content of the webpage is displayed the same as your spreadsheet content. You may now work on your spreadsheet, enriching your content!
+4. Now, you would see the content of the webpage is displayed the same as your spreadsheet content. You may now work on your spreadsheet, enriching your content!
 
 ## Spreadsheet
 There are 7 columns in the spreadsheet. Please do not make any changes in the header (row 1), otherwise, data will not be able to display successfully in your webpage.
@@ -84,7 +86,7 @@ Of course, you may use static json file or other mediums other than Google sprea
 Then, edit the `index.html` to change the info, such as title and tag filter section to fit as yours. I've made remarks inside the files. Feel free to contact me if you have any questions.
 
 ## Sturcture of the tag filter section
-You may copy your customized code using `tag-filter` sheet (column E) in the [Google spreedsheet template](https://docs.google.com/spreadsheets/d/1WElB2aS-R9EYkt5lGlSHj_GlMioOhuuvOTWZwVj6gs8/).
+You may copy your customized code using `tag-filter` sheet (column E) in the [Google spreedsheet template](https://bit.ly/mybookmark-spreadsheet-template).
 
 ```html
 <div class="tagarea_ind">
