@@ -1,0 +1,696 @@
+/***--------- ↓↓↓ DO NOT DELETE or EDIT THIS ↓↓↓ --------------------
+*
+* Feel free to fork this as template and make edits to fit your needs 
+* as long as (1) credit is given, (2) link back to here: https://github.com/ouoholly/mybookmark
+*
+* Star the repo if you like it (σﾟ∀ﾟ)σ..:*☆
+* Welcome to contact me for suggestions or recommendations.(●´∀`●)ノ*
+*
+* -------------------------------------------------------------------
+*
+* Author  :  ouoholly
+* Version :  v1.0 --- 2020.05.01
+*
+-------------- ↑↑↑ DO NOT DELETE or EDIT THIS ↑↑↑ ------------------***/
+
+
+/***---------------------------------------***/
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
+@import url('https://fonts.googleapis.com/css?family=Oxanium&display=swap');
+
+/***---------------------------------------***/
+
+html,
+body {
+    font-family: 'Avenir Next', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: #424242;
+    color: white;
+    max-height: 100vh;
+    min-width: 330px;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+textarea,
+input,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+
+/***------------------------------------------
+   bottom comment, footer
+------------------------------------------***/
+
+#comment {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 999999;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    font-size: 15px;
+    font-family: 'Oxanium', monospace;
+    background-color: rgb(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    /* 定位 */
+    position: absolute;
+    bottom: 120%;
+    right: 10%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.shuffle-button > .tooltiptext {
+    top: -5px;
+    left: 150%;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    background-color: transparent;
+    font-size: 12px;
+}
+
+#cbox {
+    z-index: 99999;
+    right: 10px;
+    top: 0;
+    position: fixed;
+    box-shadow: -7px 6px 20px 2px grey;
+    width: 400px;
+    height: 100vh;
+    display: none;
+}
+
+footer {
+    font-family: 'Oxanium', monospace;
+    font-size: 12px;
+    line-height: 1.2rem;
+    color: #C5C5C5;
+    padding-bottom: 20px;
+}
+
+.likebtn-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 99;
+}
+
+/***------------------------------------------
+   loadicon
+------------------------------------------***/
+
+.loadicon {
+    position: relative;
+    bottom: 150px;
+    right: 20px;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background: url(../img/loadicon.gif) 50% 50% no-repeat;
+}
+
+/***------------------------------------------
+   scrollbar
+------------------------------------------***/
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #A2A2A2;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #42d3d8;
+}
+
+
+/***------------------------------------------
+      bounce animation 
+------------------------------------------***/
+
+.bounce {
+    display: inline-block;
+    position: relative;
+    -moz-animation: bounce 1s infinite;
+    -o-animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%, 10%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-0.3em);
+    }
+    50% {
+        -webkit-transform: translateY(-0.2em);
+    }
+}
+
+@-moz-keyframes bounce {
+    0%, 10%, 100% {
+        -moz-transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-0.3em);
+    }
+    50% {
+        -moz-transform: translateY(-0.2em);
+    }
+}
+
+@-o-keyframes bounce {
+    0%, 10%, 100% {
+        -o-transform: translateY(0);
+    }
+    40% {
+        -o-transform: translateY(-0.3em);
+    }
+    50% {
+        -o-transform: translateY(-0.2em);
+    }
+}
+
+@keyframes bounce {
+    0%, 10%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-0.3em);
+    }
+    50% {
+        transform: translateY(-0.2em);
+    }
+}
+
+
+/***------------------------------------------
+   nav (left)
+------------------------------------------***/
+
+.sidenav {
+    background: #2B2B2B;
+    padding: 10px;
+    width: 300px;
+    max-height: 100vh;
+    height: 100vh;
+    overflow-y: scroll;
+    float: left;
+    margin-right: 30px;
+}
+
+
+/***------------------------------------------
+   grid (right)
+------------------------------------------***/
+
+.grid {
+    max-height: 100vh;
+    height: 100vh !important;
+    overflow-y: scroll;
+    padding-top: 30px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+
+/***------------------------------------------
+   content
+------------------------------------------***/
+
+.navhead {
+    text-align: center;
+    padding: 30px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #25b0b4;
+}
+
+h1 a {
+    position: relative;
+    display: inline-block;
+}
+
+h1 a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -5px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #ffc621;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+h1 a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 10px 0;
+    font-family: 'Oxanium', monospace;
+}
+
+h2 {
+    font-family: 'Libre Barcode 128 Text', monospace;
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 18px;
+}
+
+hr {
+    border-top: 1px dotted #C5C5C5;
+}
+
+.about {
+    text-align: center;
+    font-size: 10px;
+    text-decoration: underline;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.about::after {
+    content: " about this site";
+}
+
+#searchbox {
+    text-align: center;
+    margin: 0 25px;
+    background-color: #ffffff;
+    color: #C5C5C5;
+    line-height: 2rem;
+}
+
+input {
+    background-color: #ffffff;
+    border: 0;
+    line-height: 2rem;
+    margin-left: 10px;
+    color: #3D3D3D;
+    font-family: 'Oxanium', monospace;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+::placeholder,
+::-webkit-input-placeholder,
+:-ms-input-placeholder,
+::-moz-input-placeholder
+:-moz-input-placeholder{
+    color: #C5C5C5;
+    opacity: 1;
+}
+
+
+.tagarea {
+    padding-left: 25px;
+}
+
+.tagarea .fas {
+    color: #ffc621;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.tagarea_ind {
+    margin-bottom: 25px;
+}
+
+.tagcat {
+    cursor: pointer;
+}
+
+.tagcat:hover,
+.showalltags i:hover,
+.hidealltags i:hover {
+    color: #42d3d8;
+}
+
+/* delete the following 2 lines if you want to show tagdetails in default */
+.tagdetails {
+    display: none;
+}
+
+.showalltags,
+.hidealltags {
+    cursor: pointer;
+}
+
+.tag,
+.shuffle-button {
+    display: inline-block;
+    margin: 0.2rem 0.2rem 0.5rem 0;
+    padding: 0.2rem 0.8rem;
+    width: fit-content;
+    border: 1px solid #f76b61;
+    border-radius: 1.2rem;
+    background: #f76b61;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.shuffle-button {
+    margin-left: 50px;
+}
+
+.tag:hover,
+.shuffle-button:hover {
+    background: #42d3d8;
+    border: 1px solid #42d3d8;
+    -webkit-box-shadow: 0 4px 8px 6px rgba(7, 17, 27, 0.03);
+    box-shadow: 0 4px 8px 6px rgba(7, 17, 27, 0.03);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.tagall {
+    background: #ffc621;
+    border: none;
+    border-radius: 0;
+    padding: 0.6rem 1rem;
+}
+
+.tagall:hover {
+    background: #42d3d8;
+    border: none;
+    border-radius: 0;
+}
+
+.tag:active,
+.tag.is-checked {
+    background-color: #42d3d8;
+    border: none;
+    transform: scale(1.18);
+}
+
+.shuffle-button {
+    background: transparent;
+    border: none;
+    position: relative;
+    font-size: 20px;
+}
+
+.shuffle-button:hover {
+    background: transparent;
+    border: none;
+}
+
+.item {
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+    box-shadow: 3px 3px 2px 0px rgb(0,0,0,.4);
+    width: 260px;
+    height: 80px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-table;
+}
+
+.item:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.itemimg {
+    float: left;
+}
+
+.itemimg img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+}
+
+.item:hover > .itemimg img {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.itemtitle {
+    font-weight: 900;
+    font-size: 16px;
+    color: #f76b61;
+    padding: 10px 0 0 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.iteminfo {
+    font-size: 12px;
+    color: #6A6A6A;
+    padding-left: 10px;
+    padding-top: 5px;
+    line-height: 1.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.itemtype{
+    background: #b9b9b9;
+    color: #fff;
+    font-size: 10px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 5px;
+}
+
+.itemtag,
+.itemurl,
+.hiddenkeywords {
+    display: none;
+}
+
+
+/***------------------------------------------
+   smallscreen
+------------------------------------------***/
+
+@media only screen and (max-width: 680px) {
+    .grid {
+        padding: 10px;
+        padding-left: 8px;
+        overflow-y: scroll;
+        padding-top: 110px;
+        width: 100vw;
+    }
+    #cbox {
+        right: 0;
+        width: 100%;
+    }
+    .mnav {
+        top: 0;
+        height: 110px;
+        width: 100%;
+        position: fixed;
+        background: #2B2B2B;
+        z-index: 9;
+    }
+    .sidenav {
+        margin-left: -1000px;
+    }
+    .navhead,
+    .pchr {
+        display: none;
+    }
+    h1 {
+        font-size: 16px;
+        text-align: left;
+        margin: 20px 0 0 25px;
+    }
+    #searchbox {
+        position: fixed;
+        top: 55px;
+        left: 25px;
+        width: 210px;
+        padding: 0;
+        padding-right: 10px;
+        margin: 0;
+        z-index: 9;
+        text-align: right;
+    }
+    .fa-search {
+        left: 40px;
+        top: 65px;
+        position: fixed;
+    }
+    input.quicksearch {
+        left: 45px;
+        width: 80%;
+    }
+    .about {
+        position: fixed;
+        top: 85px;
+        left: 260px;
+        z-index: 9;
+    }
+    .about::after {
+        content: "";
+    }
+    .tagarea {
+        width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        overflow-y: scroll;
+        padding: 30px;
+        background: #2B2B2B;
+        z-index: 99;
+        display: none;
+    }
+    .shuffle-button {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    .shuffle-button > .tooltiptext {
+        top: -5px;
+        left: 160%;
+        right: 0;
+        bottom: 0;
+        width: 80px;
+        background-color: transparent;
+        font-size: 12px;
+    }
+    .menubtn {
+        display: inline-block;
+        cursor: pointer;
+        top: 10px;
+        right: 20px;
+        position: fixed;
+        cursor: pointer;
+        z-index: 99999;
+    }
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    .change .bar2 {
+        opacity: 0;
+    }
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    footer::after {
+        content: "\A";
+        white-space: pre;
+    }
+    .likebtn-wrapper {
+        top: 60px;
+        right: 10px;
+        left: auto;
+    }
+
+}
+
+@media only screen and (min-width: 679px) {
+    .mnav, #menubtn {
+        display: none;
+    }
+}

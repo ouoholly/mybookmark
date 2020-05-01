@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html>
+
+<!--------- ↓↓↓ DO NOT REMOVE or EDIT THIS NOTE ↓↓↓ --------------------
+*
+* Feel free to fork this as template and make edits to fit your needs 
+* as long as (1) credit is given, (2) link back to here: https://github.com/ouoholly/mybookmark
+*
+* Star the repo if you like it (σﾟ∀ﾟ)σ..:*☆
+* Welcome to contact me for suggestions or recommendations.(●´∀`●)ノ*
+*
+* -------------------------------------------------------------------
+*
+* Author  :  ouoholly
+* Version :  v1.0 --- 2020.05.01
+*
+-------------- ↑↑↑ DO NOT REMOVE or EDIT THIS NOTE ↑↑↑ ------------------>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="bookmark" href="img/favicon.ico" />
+
+    <title>
+        MyBookmark | ouoholly
+    </title>
+
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- LikeBtn.com BEGIN -->
+    <span class="likebtn-wrapper" data-theme="review" data-ef_voting="wobble" data-show_like_label="false" data-dislike_enabled="false" data-icon_dislike_show="false" data-voting_cancelable="false" data-voting_frequency="1" data-counter_clickable="true" data-counter_frmt="comma" data-i18n_after_like="Glad you liked it!" data-i18n_like_tooltip="Like" data-i18n_unlike_tooltip="Glad you liked it!" data-popup_position="bottom"></span>
+    <script>
+        (function(d, e, s) {
+            if (d.getElementById("likebtn_wjs")) return;
+            a = d.createElement(e);
+            m = d.getElementsByTagName(e)[0];
+            a.async = 1;
+            a.id = "likebtn_wjs";
+            a.src = s;
+            m.parentNode.insertBefore(a, m)
+        })(document, "script", "//w.likebtn.com/js/w/widget.js");
+    </script>
+    <!-- LikeBtn.com END -->
+
+    <!-- mobile nav  -->
+    <div class="menubtn">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <div class="mnav">
+        <h1><a href="https://ouoholly.github.io/"><i class="fab fa-github bounce"></i> ouoholly's bookmark</a><i class="fas fa-bookmark" style="color:#f76b61;margin-left: 10px;"></i></h1>
+
+        <hr style="margin:68px 0 0 -15px;">
+    </div>
+    <!-- End mobile nav / -->
+
+
+    <div class="sidenav">
+
+        <div class="navhead">
+
+            <h1><a href="https://ouoholly.github.io/" name="top"><i class="fab fa-github bounce"></i> ouoholly</a></h1>
+
+            <i class="fas fa-bookmark" style="color:#f76b61;"></i>
+
+            <h2>MY BOOKMARK</h2>
+        </div>
+
+        <a href="https://github.com/ouoholly/mybookmark">
+            <div class="about"><i class="fas fa-info-circle"></i></div>
+        </a>
+
+
+        <div id="searchbox">
+            <i class="fas fa-search"></i>
+            <input class="quicksearch" type="text" placeholder="Let's search!" aria-label="Search" style="font-size: 16px;">
+        </div>
+
+
+        <hr class="pchr" style="margin: 25px 15px;">
+
+
+        <!-- tagarea -->
+
+        <div class="tagarea" id="filters" role='navigation'>
+
+            <button class="tag tagall is-checked" data-filter="*">ALL</button>
+
+            <span class="hidealltags" style="margin-left: 20px;"><i class="fas fa-minus-square"></i></span>
+            <span class="showalltags"><i class="fas fa-plus-square"></i></span>
+
+            <button class="shuffle-button tooltip"><i class="fas fa-sync-alt fa-spin" style="color: #f76b61;"></i>
+                <span class="tooltiptext">
+                    Random Discover!
+                </span>
+            </button>
+
+            <!--  tag filter -->
+            
+            <!--------------  tag filter (template)--------------
+           
+            <div class="tagarea_ind">
+                <h3 class="tagcat"> {tag category name} </h3>
+                <div class="tagdetails">
+                    <button class="tag" data-filter=".{tag name}"> {tag dispay name} </button>
+                    <button class="tag" data-filter=".{tag name}"> {tag dispay name} </button>
+                    <button class="tag" data-filter=".{tag name}"> {tag dispay name} </button>
+                </div>
+            </div>   
+            
+             ---------  End tag filter (template)  /---------->
+
+            <div class="tagarea_ind">
+                <h3 class="tagcat"><i class="fas fa-copyright"></i> 免費素材</h3>
+                <div class="tagdetails">
+                    <p style="font-size: 12px;margin-top:-10px;">（如無特別註明 → CC0 可商用，不用署名）</p>
+                    <button class="tag" data-filter=".CC0-photo">photo</button>
+                    <button class="tag" data-filter=".CC0-illust">illustration</button>
+                    <button class="tag" data-filter=".CC0-icon">icon</button>
+                    <button class="tag" data-filter=".CC0-music">music</button>
+                    <button class="tag" data-filter=".CC0-video">video</button>
+                    <button class="tag" data-filter=".CC0-sound">sound</button>
+                    <button class="tag" data-filter=".CC0-font">font</button>
+                    <button class="tag" data-filter=".mockup">mockup</button>
+                    <button class="tag" data-filter=".CC0-ppt">ppt</button>
+                </div>
+            </div>
+
+            <div class="tagarea_ind">
+                <h3 class="tagcat"><i class="fas fa-palette"></i> 網頁設計</h3>
+                <div class="tagdetails">
+                    <button class="tag" data-filter=".lorem-generator">假圖文生產器 lorem</button>
+                    <button class="tag" data-filter=".logo">logo</button>
+                    <button class="tag" data-filter=".color">color</button>
+                    <button class="tag" data-filter=".img-search">以圖搜圖 / 顏色搜圖</button>
+                    <button class="tag" data-filter=".tool-video-edit">影片編輯</button>
+                    <button class="tag" data-filter=".tool-img-edit">圖片編輯</button>
+                    <button class="tag" data-filter=".tool-web">web tool</button>
+                    <button class="tag" data-filter=".web-css">css</button>
+                    <button class="tag" data-filter=".web-js">js</button>
+                </div>
+            </div>
+
+            <div class="tagarea_ind">
+                <h3 class="tagcat"><i class="fas fa-desktop"></i> 好用軟件</h3>
+                <div class="tagdetails">
+                    <button class="tag" data-filter=".screen-recording">錄屏</button>
+                    <button class="tag" data-filter=".screenshot">截圖</button>
+                    <button class="tag" data-filter=".tool-code-editor">code editor</button>
+                    <button class="tag" data-filter=".tool-drawing">drawing tool</button>
+                    <button class="tag" data-filter=".tool-design">design tool</button>
+                    <button class="tag" data-filter=".window">Windows</button>
+                    <button class="tag" data-filter=".mac">Mac</button>
+                    <button class="tag" data-filter=".ios">iOS</button>
+                    <button class="tag" data-filter=".chrome-add-on">chrome 擴充功能</button>
+                    <button class="tag" data-filter=".my-ios">我的常用 iOS</button>
+                    <button class="tag" data-filter=".my-mac">我的常用 Mac</button>
+                    <button class="tag" data-filter=".my-win">我的常用 Windows</button>
+                </div>
+            </div>
+
+            <div class="tagarea_ind">
+                <h3 class="tagcat"><i class="fas fa-toolbox"></i> 方便工具</h3>
+                <div class="tagdetails">
+                    <button class="tag" data-filter=".handy-tool">★ Handy Tool ★</button>
+                    <button class="tag" data-filter=".temp-email-sms">臨時 email / sms 收發</button>
+                    <button class="tag" data-filter=".short-url">縮短網址</button>
+                    <button class="tag" data-filter=".anonymous">匿名發圖文</button>
+                    <button class="tag" data-filter=".image-upload">upload image</button>
+                    <button class="tag" data-filter=".video-upload">upload video</button>
+                    <button class="tag" data-filter=".video-download">下載 video</button>
+                    <button class="tag" data-filter=".live">直播 live</button>
+                    <button class="tag" data-filter=".remote-desktop">remote desktop</button>
+                </div>
+            </div>
+
+            <div class="tagarea_ind">
+                <h3 class="tagcat"><i class="fas fa-comment-alt"></i> 語言學習</h3>
+                <div class="tagdetails">
+                    <button class="tag" data-filter=".learn-lang-jp">日文</button>
+                    <button class="tag" data-filter=".learn-lang-ko">韓文</button>
+                    <button class="tag" data-filter=".learn-lang-en">英文</button>
+                    <button class="tag" data-filter=".learn-lang-ru">俄文</button>
+                    <button class="tag" data-filter=".dict">字典</button>
+                </div>
+            </div>
+
+            <div class="tagarea_ind">
+                <h3 class="tagcat"><i class="fas fa-cube"></i> 雜七雜八</h3>
+                <div class="tagdetails">
+                    <button class="tag" data-filter=".collection">collection</button>
+                    <button class="tag" data-filter=".open-data">open data</button>
+                    <button class="tag" data-filter=".data-visualization">data visualization</button>
+                    <button class="tag" data-filter=".inspiration">inspiration</button>
+                    <button class="tag" data-filter=".great-work">great work</button>
+                    <button class="tag" data-filter=".news">新聞</button>
+                    <button class="tag" data-filter=".photographer">攝影師</button>
+                    <button class="tag" data-filter=".good-tutorial">好教學</button>
+                    <button class="tag" data-filter=".platform-video">video platform</button>
+                </div>
+            </div>
+            <!--  End tag filter/-->
+        
+        <footer>
+            <hr class="pchr" style="margin: 25px 15px;margin-left: -10px;">
+
+            <span>&copy; 2020 - <script type="text/javascript">document.write(new Date().getFullYear());</script> &nbsp; 
+                
+            <!---------- ↓↓↓ change this to your name and url ↓↓↓------------>
+                
+                <a href="https://ouoholly.github.io/mybookmark">ouoholly</a></span>
+
+            <!-----------↑↑↑ change this to your name and url ↑↑↑ ----------->
+
+            <br>
+
+            <!--- ↓↓↓ please keep this credit and link back ↓↓↓ --->
+
+            <span>&copy; MyBookmark design by <a href="https://github.com/ouoholly/mybookmark"><u>ouoholly</u></a></span>
+
+            <!--- ↑↑↑ please keep this credit and link back ↑↑↑ --->
+
+            <br>
+
+            <!---------- ↓↓↓ you may add a line if you like ↓↓↓------------
+
+                <span>Adapted and modified by </span>
+
+            -------------↑↑↑ you may add a line if you like ↑↑↑ ----------->
+
+        </footer>
+
+        </div>
+        <!-- End tagarea /-->
+        
+    </div>
+    <!-- End sidenav /-->
+
+    <!-- grid item -->
+    <div class="grid" id="filteritems">
+
+        <div class="loadicon"></div>
+
+        <!--------- item will be inserted here (template) --------------------
+                
+                 <a href="[url]" target="_blank">
+                     <div class="item [itemtag]">
+                         <div class="itemimg"><img src="img/loading.svg" data-src="[imgurl]" class="lazyload" onerror="imgError(this);"/></div>
+                         <div class="itemtitle">[itemtitle]</div>
+                         <div class="iteminfo">[iteminfo]</div>
+                         <div class="itemtype">[itemtype]</div>
+                         <div class="itemtag">[itemtag]</div>
+                         <div class="itemurl">[url]</div>
+                        <div class="hiddenkeywords">[hiddenkeywords]</div>
+                     </div>
+                 </a>  
+                    
+       ------------  End item will be inserted here  (template)  /------------->
+
+    </div>
+    <!-- End grid item /-->
+
+
+    <!-- comment -->
+
+    <div id="comment" class="tooltip">
+        <span class="fa-stack bounce">
+            <i class="fa fa-circle fa-stack-2x" style="color: #25b0b4;"></i>
+            <i class="fas fa-comment-dots fa-stack-1x fa-inverse"></i>
+        </span>
+
+        <span class="tooltiptext bounce">
+            Any suggestions? <br>
+            Click here to comment! <br>
+            歡迎各位推薦更多好網站 ლ(´∀`ლ )
+        </span>
+    </div>
+
+    <!-- cbox -->
+    <iframe id="cbox" src="" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+
+    <!-- End comment/ -->
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- lazyload https://web.dev/codelab-use-lazysizes-to-lazyload-images/ -->
+    <script src="js/lazysizes.min.js"></script>
+
+    <!-- Isotope - for filtering -->
+    <script src="js/isotope.pkgd.min.js"></script>
+
+    <script src="js/filtersearch.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Typing effect https://github.com/disjukr/activate-power-mode -->
+    <script src="js/activate-power-mode.js"></script>
+    <script>
+        POWERMODE.colorful = true; // make power mode colorful
+        POWERMODE.shake = false; // turn off shake
+        document.body.addEventListener('input', POWERMODE);
+    </script>
+
+
+</body>
+
+</html>
