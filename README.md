@@ -31,7 +31,8 @@ Used the following libraries/services :
 + [FontAwesome](https://fontawesome.com/)
 + [Isotope](https://isotope.metafizzy.co/) (filtering and searching features)
 + [activate-power-mode](http://0xabcdef.com/activate-power-mode/) (typing effect used in search box)
-+ [Cbox](http://www.cbox.ws/) (live chat comment box)
++ [Cbox](http://www.cbox.ws/) (live chat comment box widget)
++ [LikeBtn](http://likebtn.com/)(like button widget)
 + Google spreadsheet (data storage)
 
 
@@ -40,6 +41,7 @@ Used the following libraries/services :
 Feel free to fork or download this as template and make edits to fit your needs as long as credit is given and link back to <https://github.com/ouoholly/mybookmark> in your webpage.
 
 Star the repo if you like it (σﾟ∀ﾟ)σ..☆
+
 Welcome to contact me for suggestions or recommendations. (●'∀'●)ノ
 
 
