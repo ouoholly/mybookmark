@@ -4,11 +4,11 @@
 
 # Why I Did This
 
-To organize my messy bookmarked urls.
+To organize and centralize my messy bookmarked urls.
 
-In order to enable myself to make additions/deletions/updates on my bookmarked items conveniently no matter whether I'm using a mobile or desktop, I chose to **store the data in Google spreadsheet**. For display, output the data as json and fetch to html.
+In order to enable myself to make additions/deletions/updates on my bookmarked items conveniently no matter whether I'm using a mobile or desktop, decided to **store the data in Google spreadsheet**. Output the data as json and fetch them in html.
 
-In order to enable myself to find what I want quickly, **tag filtering**, **keywords searching** and **thumbnails previewing** features are created. Fully customizable and personalized according to your own classification logic and way.
+**Tag filtering**, **keywords searching** and **thumbnails previewing** features are created. Fully customizable and personalized in line with your own classification logic and way.
 
 
 # Inspiration
@@ -19,6 +19,7 @@ Below are some awesome all-in-one-bookmark webpages:
 + [WebStackPage](http://webstack.cc/)
 + [The Stocks 2](http://thestocks.im/)
 + [Web Design Resources](https://simular.co/resources/)
++ [前端導航網](http://jsdig.com/)
 
 
 # About
@@ -47,7 +48,7 @@ Welcome to contact me for suggestions or recommendations. (●'∀'●)ノ
 
 # How To Use
 
-These two files are compulsory to make edits:
+Mainly edit the following two files:
 + data.js
 + index.html
 
@@ -61,7 +62,9 @@ Here is a [Google spreedsheet template](https://bit.ly/mybookmark-spreadsheet-te
 ![How to use Google spreadsheet template](preview/template.png)
 
 
-4. Now, you would see the content of the webpage is displayed the same as your spreadsheet content. You may now work on your spreadsheet, enriching your content!
+4. Now, you would see the content of the webpage is displayed the same as your spreadsheet content. 
+
+5. Work on your spreadsheet, enriching your content!
 
 ## Spreadsheet
 There are 7 columns in the spreadsheet. Please do not make any changes in the header (row 1), otherwise, data will not be able to display successfully in your webpage.
@@ -81,12 +84,12 @@ All the content in these 7 columns are searchable in the search box.
 | G      | hiddenkeywords  | words inputted in this field will not be displayed on the webpage but they are searchable via search box    |
 
 
-Of course, you may use static json file or other mediums other than Google spreadsheet to store your data, just edit `data.js` to fit your needs!
+Of course, you may use static json file (the loading time would probably be much faster) or other mediums other than Google spreadsheet to store your data, just edit `data.js` to fit your needs!
 
-Then, edit the `index.html` to change the info, such as title and tag filter section to fit as yours. I've made remarks inside the files. Feel free to contact me if you have any questions.
+Edit the `index.html` to change the info, such as title and tag filter section to fit as yours. I've made remarks inside the files. Feel free to contact me if you have any questions.
 
 ## Sturcture of the tag filter section
-You may copy your customized code using `tag-filter` sheet (column E) in the [Google spreedsheet template](https://bit.ly/mybookmark-spreadsheet-template).
+For your ease of convenience, you may refer to the `tag-filter` sheet (column E) in the [Google spreedsheet template](https://bit.ly/mybookmark-spreadsheet-template).
 
 ```html
 <div class="tagarea_ind">
