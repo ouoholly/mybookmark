@@ -38,21 +38,21 @@ $(function mydata() {
 
             $.each(data.feed.entry, function(i, entry) {
 
-                var item = '<a href="' + entry.gsx$url.$t + '" target="_blank"><div class="item ' + ' ' + entry.gsx$itemtag.$t + '">';
+                var item = '<a href="' + ${entry[3]} + '" target="_blank"><div class="item ' + ' ' + entry.gsx$itemtag.$t + '">';
 
-                item += '<div class="itemimg"><img src="img/loading.svg" data-src="' + entry.gsx$imgurl.$t + '" class="lazyload" onerror="imgError(this);"/></div>';
+                item += '<div class="itemimg"><img src="img/loading.svg" data-src="' + ${entry[0]} + '" class="lazyload" onerror="imgError(this);"/></div>';
 
-                item += '<div class="itemtitle">' + entry.gsx$itemtitle.$t + '</div>';
+                item += '<div class="itemtitle">' + ${entry[2]} + '</div>';
 
-                item += '<div class="iteminfo">' + entry.gsx$iteminfo.$t + '</div>';
+                item += '<div class="iteminfo">' + ${entry[4]} + '</div>';
 
-                item += '<div class="itemtype">' + entry.gsx$itemtype.$t + ' </div>';
+                item += '<div class="itemtype">' + ${entry[1]} + ' </div>';
 
-                item += '<div class="itemtag">' + entry.gsx$itemtag.$t + '</div>';
+                item += '<div class="itemtag">' + ${entry[5]} + '</div>';
 
-                item += '<div class="itemurl">' + entry.gsx$url.$t + ' </div>';
+                item += '<div class="itemurl">' + ${entry[3]} + ' </div>';
 
-                item += '<div class="hiddenkeywords">' + entry.gsx$hiddenkeywords.$t + ' </div>';
+                item += '<div class="hiddenkeywords">' + ${entry[6]} + ' </div>';
 
                 item += '</div></a>';
 
