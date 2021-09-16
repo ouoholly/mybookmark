@@ -9,7 +9,7 @@
 * -------------------------------------------------------------------
 *
 * Author  :  ouoholly
-* Version :  v1.0 --- 2020.05.01
+* Version :  v1.1 --- 2021.09.17
 *
 -------------- ↑↑↑ DO NOT REMOVE or EDIT THIS NOTE ↑↑↑ ------------------***/
 
@@ -20,9 +20,10 @@ var GoogleSheetJson = {};
 GoogleSheetJson.getsheeturl = function() {
     
         var sheetid = '10nj-ELh4o3HHfG99JnxrsoONBn9LoHJc4I0doRnE354', // enter your spreadsheet url
-            sheetno = 1,                                              // enter your sheet no.
+            sheetname = itemlist,                                    // enter your sheet name
+            apikey = AIzaSyAdTDEIslD8C8f2JzxR0gslWRP4U10lZ9Q,        // enter your Google API key
             
-            dataurl = 'https://spreadsheets.google.com/feeds/list/' + sheetid + '/' + sheetno + '/public/values?alt=json-in-script&callback=?';
+            dataurl = 'https://sheets.googleapis.com/v4/spreadsheets/' + sheetid + '/values/' + sheetname + '?alt=json&key=' + apikey ;
     
         return dataurl;
 };
