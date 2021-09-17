@@ -38,7 +38,7 @@ $(function mydata() {
 
             $.each(data.feed.entry, function(i, entry) {
 
-                var item = '<a href="' + ${entry[3]} + '" target="_blank"><div class="item ' + ' ' + entry.gsx$itemtag.$t + '">';
+                var item = '<a href="' + ${entry[3]} + '" target="_blank"><div class="item ' + ' ' + ${entry[5]} + '">';
 
                 item += '<div class="itemimg"><img src="img/loading.svg" data-src="' + ${entry[0]} + '" class="lazyload" onerror="imgError(this);"/></div>';
 
