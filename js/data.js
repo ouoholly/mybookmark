@@ -9,7 +9,8 @@
 * -------------------------------------------------------------------
 *
 * Author  :  ouoholly
-* Version :  v2.0 --- 2021.09.18 （GData was shut down and was replaced by Google Sheets API v4)
+* Version :  v1.0 --- 2020.05.01
+*            v2.0 --- 2021.09.18 （GData was shut down and was replaced by Google Sheets API v4)
 *
 -------------- ↑↑↑ DO NOT REMOVE or EDIT THIS NOTE ↑↑↑ ------------------***/
 
@@ -41,10 +42,12 @@ fetch(dataurl)
                      </div>
                  </a>`;
 
-            document.querySelector('.grid').insertAdjacentHTML('beforeend', item);
+            let $items = $(item);
+            $grid.append($items).isotope('appended', $items);
+            $grid.isotope('layout');
 
         })
-    
-    $(".loadicon").hide();
-    
+
+        $(".loadicon").hide();
+
     })
