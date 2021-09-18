@@ -9,62 +9,42 @@
 * -------------------------------------------------------------------
 *
 * Author  :  ouoholly
-* Version :  v1.1 --- 2021.09.17
+* Version :  v1.1 --- 2021.09.18
 *
 -------------- ↑↑↑ DO NOT REMOVE or EDIT THIS NOTE ↑↑↑ ------------------***/
 
 
-// Google spreadsheet info
-var GoogleSheetJson = {};
+    <script>
+        // Reference: https://www.letswrite.tw/google-excel-db/
 
-GoogleSheetJson.getsheeturl = function() {
-    
-        var sheetid = '10nj-ELh4o3HHfG99JnxrsoONBn9LoHJc4I0doRnE354', // enter your spreadsheet url
-            sheetname = itemlist,                                    // enter your sheet name
-            apikey = AIzaSyAdTDEIslD8C8f2JzxR0gslWRP4U10lZ9Q,        // enter your Google API key
-            
-            dataurl = 'https://sheets.googleapis.com/v4/spreadsheets/' + sheetid + '/values/' + sheetname + '?alt=json&key=' + apikey ;
-    
-        return dataurl;
-};
+        const uri = 'https://sheets.googleapis.com/v4/spreadsheets/10nj-ELh4o3HHfG99JnxrsoONBn9LoHJc4I0doRnE354/values/itemlist?alt=json&key=AIzaSyAdTDEIslD8C8f2JzxR0gslWRP4U10lZ9Q';
+
+        fetch(uri)
+            .then(res => res.json())
+            .then(res => {
+                const data = res.values;
+                console.log(data);
+
+                data.shift();
+
+                Array.prototype.forEach.call(data, d => {
+                    let Card = `
+                <a href="${d[3]}" target="_blank">
+                     <div class="item ${d[5]}">
+                         <div class="itemimg"><img src="img/loading.svg" data-src="${d[0]}" class="lazyload" onerror="imgError(this);"/></div>
+                         <div class="itemtitle">${d[2]}</div>
+                         <div class="iteminfo">${d[4]}</div>
+                         <div class="itemtype">${d[1]}</div>
+                         <div class="itemtag">${d[5]}</div>
+                         <div class="itemurl">${d[3]}</div>
+                        <div class="hiddenkeywords">${d[6]}</div>
+                     </div>
+                 </a>`;
+
+                    document.querySelector('.grid').insertAdjacentHTML('beforeend', Card);
+                })
+            })
+
+    </script>
 
 
-// fetch google spreadsheet data to html
-$(function mydata() {
-
-    $.getJSON(GoogleSheetJson.getsheeturl(),
-
-        function(data) {
-
-            $.each(data.feed.entry, function(i, entry) {
-
-                var item = '<a href="' + ${entry[3]} + '" target="_blank"><div class="item ' + ' ' + ${entry[5]} + '">';
-
-                item += '<div class="itemimg"><img src="img/loading.svg" data-src="' + ${entry[0]} + '" class="lazyload" onerror="imgError(this);"/></div>';
-
-                item += '<div class="itemtitle">' + ${entry[2]} + '</div>';
-
-                item += '<div class="iteminfo">' + ${entry[4]} + '</div>';
-
-                item += '<div class="itemtype">' + ${entry[1]} + ' </div>';
-
-                item += '<div class="itemtag">' + ${entry[5]} + '</div>';
-
-                item += '<div class="itemurl">' + ${entry[3]} + ' </div>';
-
-                item += '<div class="hiddenkeywords">' + ${entry[6]} + ' </div>';
-
-                item += '</div></a>';
-
-                var $items = $(item);
-                $grid.append($items).isotope('appended', $items);
-                $grid.isotope('layout');
-
-            });
-        
-            //hide loading icon after complete loading
-            $(".loadicon").hide();
-
-        });
-
-});
