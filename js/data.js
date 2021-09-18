@@ -14,21 +14,23 @@
 -------------- ↑↑↑ DO NOT REMOVE or EDIT THIS NOTE ↑↑↑ ------------------***/
 
 
-    <script>
-        // Reference: https://www.letswrite.tw/google-excel-db/
 
-        const uri = 'https://sheets.googleapis.com/v4/spreadsheets/10nj-ELh4o3HHfG99JnxrsoONBn9LoHJc4I0doRnE354/values/itemlist?alt=json&key=AIzaSyAdTDEIslD8C8f2JzxR0gslWRP4U10lZ9Q';
+// Reference: https://www.letswrite.tw/google-excel-db/
 
-        fetch(uri)
-            .then(res => res.json())
-            .then(res => {
-                const data = res.values;
-                console.log(data);
+$(".loadicon").hide();
 
-                data.shift();
+const uri = 'https://sheets.googleapis.com/v4/spreadsheets/10nj-ELh4o3HHfG99JnxrsoONBn9LoHJc4I0doRnE354/values/itemlist?alt=json&key=AIzaSyAdTDEIslD8C8f2JzxR0gslWRP4U10lZ9Q';
 
-                Array.prototype.forEach.call(data, d => {
-                    let Card = `
+fetch(uri)
+    .then(res => res.json())
+    .then(res => {
+        const data = res.values;
+        console.log(data);
+
+        data.shift();
+
+        Array.prototype.forEach.call(data, d => {
+            let Card = `
                 <a href="${d[3]}" target="_blank">
                      <div class="item ${d[5]}">
                          <div class="itemimg"><img src="img/loading.svg" data-src="${d[0]}" class="lazyload" onerror="imgError(this);"/></div>
@@ -41,10 +43,6 @@
                      </div>
                  </a>`;
 
-                    document.querySelector('.grid').insertAdjacentHTML('beforeend', Card);
-                })
-            })
-
-    </script>
-
-
+            document.querySelector('.grid').insertAdjacentHTML('beforeend', Card);
+        })
+    })
