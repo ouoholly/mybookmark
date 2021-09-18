@@ -9,28 +9,26 @@
 * -------------------------------------------------------------------
 *
 * Author  :  ouoholly
-* Version :  v1.1 --- 2021.09.18
+* Version :  v2.0 --- 2021.09.18 （GData was shut down and was replaced by Google Sheets API v4)
 *
 -------------- ↑↑↑ DO NOT REMOVE or EDIT THIS NOTE ↑↑↑ ------------------***/
 
 
+const sheetid = '10nj-ELh4o3HHfG99JnxrsoONBn9LoHJc4I0doRnE354', // enter your spreadsheet url
+    sheetname = 'itemlist', // enter your sheet name
+    apikey = 'AIzaSyAdTDEIslD8C8f2JzxR0gslWRP4U10lZ9Q', // enter your Google API key
+    dataurl = 'https://sheets.googleapis.com/v4/spreadsheets/' + sheetid + '/values/' + sheetname + '?alt=json&key=' + apikey;
 
-// Reference: https://www.letswrite.tw/google-excel-db/
-
-$(".loadicon").hide();
-
-const uri = 'https://sheets.googleapis.com/v4/spreadsheets/10nj-ELh4o3HHfG99JnxrsoONBn9LoHJc4I0doRnE354/values/itemlist?alt=json&key=AIzaSyAdTDEIslD8C8f2JzxR0gslWRP4U10lZ9Q';
-
-fetch(uri)
-    .then(res => res.json())
-    .then(res => {
-        const data = res.values;
+fetch(dataurl)
+    .then(result => result.json())
+    .then(result => {
+        const data = result.values;
         console.log(data);
 
         data.shift();
 
         Array.prototype.forEach.call(data, d => {
-            let Card = `
+            let item = `
                 <a href="${d[3]}" target="_blank">
                      <div class="item ${d[5]}">
                          <div class="itemimg"><img src="img/loading.svg" data-src="${d[0]}" class="lazyload" onerror="imgError(this);"/></div>
@@ -43,6 +41,10 @@ fetch(uri)
                      </div>
                  </a>`;
 
-            document.querySelector('.grid').insertAdjacentHTML('beforeend', Card);
+            document.querySelector('.grid').insertAdjacentHTML('beforeend', item);
+
         })
+    
+    $(".loadicon").hide();
+    
     })
