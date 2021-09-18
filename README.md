@@ -61,7 +61,7 @@ Here is a [Google spreedsheet template](https://bit.ly/mybookmark-spreadsheet-te
 3. Copy your spreadsheet id to the `sheetid` variable in `data.js`.
 ![How to use Google spreadsheet template](preview/template.png)
 
-4. Copy your spreadsheet id to the `apikey` variables in `data.js`.
+4. Copy your Google API Key to the `apikey` variables in `data.js`.
 You may refer to this article to see how to get your Google API Key : [V4 版取得 Google Sheets 資料的方法 | Augustus | Let’s Write](https://www.letswrite.tw/google-excel-db/#v4-%e7%89%88%e5%8f%96%e5%be%97-google-sheets-%e8%b3%87%e6%96%99%e7%9a%84%e6%96%b9%e6%b3%95)
 
 5. Now, you would see the content of the webpage is displayed the same as your spreadsheet content. 
